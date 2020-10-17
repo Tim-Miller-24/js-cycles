@@ -141,8 +141,12 @@ function startGame() {
     }
 
     var fifthCompare = smoothing(rnd, fifthTry);
+     
 
-    alert('Ты проиграл! Открой консоль чтоб узнать нужное число (f12)');
+    if (firstTry !== rnd && secondTry !== rnd && thirdTry !== rnd && fourthTry !== rnd && fifthTry !== rnd) {
+        alert('Ты проиграл! Открой консоль чтоб узнать нужное число (f12)');
+    }
+   
 
     console.log(`Случайное число: ${rnd}`);
 }
