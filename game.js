@@ -5,7 +5,7 @@ function askStart() {
         startGame();
     }
     else {
-        window.close();
+        document.location.href = "https://tim-miller-24.github.io/js-game/";
     }
 
 
