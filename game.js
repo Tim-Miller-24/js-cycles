@@ -1,8 +1,15 @@
 
+function randomNumb(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+// var rnd = randomNumb(1, 100);
+var rnd = 50;
+
 function askStart() {
     var start = confirm("Хочешь сыграть в игру с угадыванием чисел?");
     if (start == true) {
         startGame();
+        console.log(`Случайное число: ${rnd}`);
     }
     else {
         document.location.href = "index.html";
@@ -13,11 +20,7 @@ function askStart() {
 
 
 
-function startGame() {
-
-    function randomNumb(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
+function startGame() {    
 
     function smoothing(rnd, userNumb) {
         if (rnd > userNumb) {
@@ -61,13 +64,12 @@ function startGame() {
         }
     }
 
-    var rnd = randomNumb(1, 100);
-
+    
 
 
     alert("Угадай число от 1 до 100. У тебя 5 попыток");
 
-    while (firstTry !== rnd || secondTry !== rnd || thirdTry !== rnd || fourthTry !== rnd || fifthTry !== rnd) {
+    // while (firstTry !== rnd || secondTry !== rnd || thirdTry !== rnd || fourthTry !== rnd || fifthTry !== rnd) {
         var firstTry = +prompt("Попытка № 1");
 
         var condition1 = firstTry >= 1 && firstTry <= 100;
@@ -83,8 +85,8 @@ function startGame() {
 
 
         if (firstTry == rnd) {
-            alert('Поздравляю,ты угадал! Игра закончена');
-            break;
+            return alert('Поздравляю,ты угадал! Игра закончена');
+            // break;
         }
 
 
@@ -103,8 +105,8 @@ function startGame() {
 
 
         if (secondTry == rnd) {
-            alert('Поздравляю,ты угадал! Игра закончена');
-            break;
+            return alert('Поздравляю,ты угадал! Игра закончена');
+            // break;
         }
 
 
@@ -121,8 +123,8 @@ function startGame() {
         var thirdCompare = smoothing(rnd, thirdTry);
 
         if (thirdTry == rnd) {
-            alert('Поздравляю,ты угадал! Игра закончена');
-            break;
+            return alert('Поздравляю,ты угадал! Игра закончена');
+            // break;
         }
 
 
@@ -139,8 +141,8 @@ function startGame() {
         var fourthCompare = smoothing(rnd, fourthTry);
 
         if (fourthTry == rnd) {
-            alert('Поздравляю,ты угадал! Игра закончена');
-            break;
+            return alert('Поздравляю,ты угадал! Игра закончена');
+            // break;
         }
 
 
@@ -158,17 +160,17 @@ function startGame() {
         var fifthCompare = smoothing(rnd, fifthTry);
 
         if (fifthTry == rnd) {
-            alert('Поздравляю,ты угадал! Игра закончена');
-            break;
+            return alert('Поздравляю,ты угадал! Игра закончена');
+            // break;
         }
         else {
-            alert('Ты проиграл! Открой консоль чтоб узнать нужное число (f12)');
-            break;
+            return alert('Ты проиграл! Открой консоль чтоб узнать нужное число (f12)');
+            // break;
         }
-    }
+    // }
 
 
-    console.log(`Случайное число: ${rnd}`);
+    // console.log(`Случайное число: ${rnd}`);
 }
 
 
